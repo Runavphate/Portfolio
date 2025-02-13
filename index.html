@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      margin-left: 90px;
+      padding: 0;
+      background-image: url(https://e0.pxfuel.com/wallpapers/846/344/desktop-wallpaper-portfolio.jpg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-color: white;
+      color: black;
+    }
+
+    header {
+      background-color: #0c0c0c;
+      color: white;
+      padding: 508px 20px;
+      position: fixed;
+      margin-left: -90px;
+      margin-top: -10px;
+      text-align: center;
+    }
+
+    .photo {
+      border-radius: 100px;
+      height: 150px;
+      position: fixed;
+      margin-top: -470px;
+      margin-left: -75px
+    }
+
+    header h1 {
+      margin-top: -300px;
+      font-size: 36px;
+    }
+
+    section {
+      padding: 55px 10%;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 33px;
+      margin-bottom: 30px;
+    }
+
+    .skills,
+    .projects {
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+    }
+
+    .skill {
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin: 10px;
+      width: 200px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .skill:focus {
+      box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+    }
+
+    .skill:hover {
+      box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+      transform: translateY(-2px);
+    }
+
+    .skill:active {
+      box-shadow: #D6D6E7 0 3px 7px inset;
+      transform: translateY(2px);
+    }
+
+    footer {
+      background-color: #0c0c0c;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      margin-bottom: -10px;
+      margin-right: -10px;
+    }
+
+    footer a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .logo {
+      display: inline-block;
+      font: normal normal normal 14px / 1 fontawesome;
+      font-size: inherit;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      transform: translate(0, 0);
+    }
+
+    ul {
+      list-style-type: none;
+      margin-left: -90px;
+      padding: 0;
+      overflow: hidden;
+      position: fixed;
+      margin-top: 350px;
+    }
+
+    li {
+      margin-left: 70px;
+      margin-bottom: 20px;
+    }
+
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    li a:hover {
+      background-color: #111;
+    }
+
+    .button {
+      position: relative;
+      overflow: hidden;
+      height: 3rem;
+      padding: 0 2rem;
+      margin-bottom: 300px;
+      border-radius: 1.5rem;
+      background: #6e6e6e;
+      background-size: 400%;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    .button2 {
+      position: relative;
+      overflow: hidden;
+      height: 3rem;
+      padding: 0 2rem;
+      border-radius: 1.5rem;
+      background: #6e6e6e;
+      background-size: 400%;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    .button2:hover {
+      background-color: #000000;
+    }
+
+    .button:hover {
+     background-color: #000000;
+    }
+
+    .button-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    input[type=text], select, textarea {
+  width: 50%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+
+input[type=submit] {
+  background-color: #686868;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 1.5rem;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #000000;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <img class="photo"
+      src="https://media.licdn.com/dms/image/v2/D5603AQHuROX-xDMwNA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1723308665607?e=1744848000&v=beta&t=w5FwceDA9zjAgkLD3tHX3pJuYBFCzf2noPUaAuRSI8w"
+      alt="my photo">
+    <h1>Runav Phate</h1>
+    <p style="font-size: 17px;">Blockchain Technology Student</p>
+  </header>
+
+  <ul>
+    <li><a class="active" href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#certification">Certifications</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <section id="Learn more">
+    <h2 style="margin-top: 300px; font-size:100px; color:#969696;">Hello, I am <span
+        style="color: rgb(212, 212, 212);">Runav Phate</span></h2>
+    <h3 style="margin-bottom: 100px; color:#969696; font-size:20px">Blockchain technology Student</h3>
+    <a href="#about">
+      <button class="button">
+        <span class="button-content">Learn More </span>
+      </button>
+    </a>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p style="margin: auto; width: 70%; font-size: 18px;">Hello! I'm a dedicated student working towards a degree in
+      Blockchain Technology. I'm thrilled about the possibilities that blockchain and cryptocurrency offer in
+      transforming our understanding of decentralization, transparency, and security.</p>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <p style="font-size: 18px;">Bachelor of Science (B.sc) in Blockchain Technology
+      <br>Savitribai Phule Pune University (SPPU) Pune,Maharastra
+      <br>Expected to complete: May 2028
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill">
+        <img src="https://img.icons8.com/?size=50&id=55199&format=png" alt="c and c++" height="45">
+        <h3>C and C++ Programming</h3>
+        <p>Skilled in C and C++ programming, capable of writing and debugging code.</p>
+      </div>
+      <div class="skill">
+        <img src="https://img.icons8.com/?size=50&id=03aYi0fY0D9X&format=png" alt="powerbi" height="45">
+        <h3>Power Bi</h3>
+        <p>"Skilled in Power BI, capable of creating interactive reports and visualizing data effectively.</p>
+      </div>
+      <div class="skill">
+        <img src="https://img.icons8.com/?size=64&id=750nXG40bbAS&format=png" alt="html" height="50">
+        <h3>HTML & CSS</h3>
+        <p>"Skilled in HTML & CSS, capable of creating and structuring web pages.</p>
+      </div>
+      <div class="skill">
+        <img src="https://img.icons8.com/?size=80&id=DVZdUF2ZweP4&format=png" alt="dapps" height="45">
+        <h3>Blockchain Dapps</h3>
+        <p>Skilled in developing blockchain DApps, capable of creating decentralized applications on blockchain
+          platforms.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="certification">
+    <h2>Certifications</h2>
+    <div class="skills">
+      <div class="skill">
+        <img src="https://img.icons8.com/?size=50&id=23028&format=png" alt="html" height="40px">
+        <h3>HTML</h3>
+        <p>I earned an HTML certification, demonstrating my ability to build and structure web pages using HTML.
+        </p>
+      </div>
+      <div class="skill">
+        <img src="https://img.icons8.com/?size=80&id=X8gXMElru7dO&format=png" alt="html" height="50px">
+        <h3>Autocad</h3>
+        <p>I earned an AutoCAD certification, showcasing my skills in creating detailed 2D and 3D designs using
+          AutoCAD software.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="skill">
+        <h3>Decentralized Voting System</h3>
+        <p>A blockchain-based voting system to ensure transparency and security in elections. Built with
+          Solidity and Ethereum.</p>
+        <button onclick="Voting()" class="button2">View Project</button>
+      </div>
+      <div class="skill">
+        <h3>Student Addmission Form</h3>
+        <p>HTML forms collect and submit user input to a server for processing, essential for dynamic web
+          interaction.</p>
+        <button onclick="Form()" class="button2">View Project</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 style="margin-bottom: 1px;">Contact</h2>
+    <p>feel free to reach out!</p>
+    <a href="mailto:phaterunav@gmail.com" target="_blank">
+      <img src="https://t3.ftcdn.net/jpg/01/70/65/08/360_F_170650817_gT28zz1u3arUvEqdYp7YpuTfVTiGoAJL.jpg"
+        alt="Email Logo" width="58">
+        </a>
+      <a href="https://github.com/Runavphate" target="_blank">
+        <img src="https://www.logo.wine/a/logo/GitHub/GitHub-Logo.wine.svg" alt="Email Logo" width="85">
+        </a>
+        <a href="https://www.linkedin.com/in/runav-phate-221147322" target="_blank">
+          <img src="https://img.icons8.com/?size=64&id=IuI5Yd3J3qcC&format=png" alt="Email Logo" width="50">
+          </a>
+      <div class="container">
+        <label for="fname"></label>
+        <input type="text" id="fname" name="fname" placeholder="Your name">
+        <label for="subject"></label>
+        <textarea id="subject" name="subject" placeholder="Message" style="height:50px"></textarea>
+        <br>
+        <input onclick="submit()" type="submit" value="Submit">
+      </div>
+  </section>
+
+  <script>
+    function Form() {
+      window.open('Form.html', '_blank');
+    }
+    function Voting() {
+      window.open('Voting.html', '_blank');
+    }
+    function submit() {
+      alert("Response Recorded")
+    }
+    
+  </script>
+
+  <footer>
+    <p>© 2025 Runav | All Rights Reserved</p>
+  </footer>
+
+</body>
+
+</html>
