@@ -5,204 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio</title>
-  <style>
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      margin-left: 90px;
-      padding: 0;
-      background-image: url(https://e0.pxfuel.com/wallpapers/846/344/desktop-wallpaper-portfolio.jpg);
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-color: white;
-      color: black;
-    }
-
-    header {
-      background-color: #0c0c0c;
-      color: white;
-      padding: 508px 20px;
-      position: fixed;
-      margin-left: -90px;
-      margin-top: -10px;
-      text-align: center;
-    }
-
-    .photo {
-      border-radius: 100px;
-      height: 150px;
-      position: fixed;
-      margin-top: -470px;
-      margin-left: -75px
-    }
-
-    header h1 {
-      margin-top: -300px;
-      font-size: 36px;
-    }
-
-    section {
-      padding: 55px 10%;
-      text-align: center;
-    }
-
-    section h2 {
-      font-size: 33px;
-      margin-bottom: 30px;
-    }
-
-    .skills,
-    .projects {
-      display: flex;
-      justify-content: space-evenly;
-      flex-wrap: wrap;
-    }
-
-    .skill {
-      background-color: #ffffff;
-      border: 1px solid #ddd;
-      padding: 20px;
-      margin: 10px;
-      width: 200px;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .skill:focus {
-      box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-    }
-
-    .skill:hover {
-      box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-      transform: translateY(-2px);
-    }
-
-    .skill:active {
-      box-shadow: #D6D6E7 0 3px 7px inset;
-      transform: translateY(2px);
-    }
-
-    footer {
-      background-color: #0c0c0c;
-      color: white;
-      padding: 20px 0;
-      text-align: center;
-      margin-bottom: -10px;
-      margin-right: -10px;
-    }
-
-    footer a {
-      color: #ffffff;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-
-    .logo {
-      display: inline-block;
-      font: normal normal normal 14px / 1 fontawesome;
-      font-size: inherit;
-      text-rendering: auto;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      transform: translate(0, 0);
-    }
-
-    ul {
-      list-style-type: none;
-      margin-left: -90px;
-      padding: 0;
-      overflow: hidden;
-      position: fixed;
-      margin-top: 350px;
-    }
-
-    li {
-      margin-left: 70px;
-      margin-bottom: 20px;
-    }
-
-    li a {
-      display: block;
-      color: white;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-    }
-
-    li a:hover {
-      background-color: #111;
-    }
-
-    .button {
-      position: relative;
-      overflow: hidden;
-      height: 3rem;
-      padding: 0 2rem;
-      margin-bottom: 300px;
-      border-radius: 1.5rem;
-      background: #6e6e6e;
-      background-size: 400%;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-    }
-
-    .button2 {
-      position: relative;
-      overflow: hidden;
-      height: 3rem;
-      padding: 0 2rem;
-      border-radius: 1.5rem;
-      background: #6e6e6e;
-      background-size: 400%;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-    }
-    .button2:hover {
-      background-color: #000000;
-    }
-
-    .button:hover {
-     background-color: #000000;
-    }
-
-    .button-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    input[type=text], select, textarea {
-  width: 50%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-}
-
-input[type=submit] {
-  background-color: #686868;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 1.5rem;
-  cursor: pointer;
-}
-
-input[type=submit]:hover {
-  background-color: #000000;
-}
-
-.container {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
   <header>
     <img class="photo"
       src="https://media.licdn.com/dms/image/v2/D5603AQHuROX-xDMwNA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1723308665607?e=1744848000&v=beta&t=w5FwceDA9zjAgkLD3tHX3pJuYBFCzf2noPUaAuRSI8w"
@@ -281,16 +87,18 @@ input[type=submit]:hover {
     <h2>Certifications</h2>
     <div class="skills">
       <div class="skill">
-        <img src="https://img.icons8.com/?size=50&id=23028&format=png" alt="html" height="40px">
-        <h3>HTML</h3>
-        <p>I earned an HTML certification, demonstrating my ability to build and structure web pages using HTML.
+        <img src="https://static.vecteezy.com/system/resources/previews/020/816/324/original/responsive-icon-for-your-website-mobile-presentation-and-logo-design-free-vector.jpg" alt="html" height="60px">
+        <h3>Responsive Web Design</h3>
+        <p>I earned an Responsive Web Design certification, demonstrating my ability to create websites that look great on any device.
         </p>
+        <button onclick="images/Web.JPG" class="button2">View Project</button>
       </div>
       <div class="skill">
         <img src="https://img.icons8.com/?size=80&id=X8gXMElru7dO&format=png" alt="html" height="50px">
         <h3>Autocad</h3>
         <p>I earned an AutoCAD certification, showcasing my skills in creating detailed 2D and 3D designs using
           AutoCAD software.</p>
+          <button onclick="images/Autocad.jpeg" class="button2">View Project</button>
       </div>
     </div>
   </section>
