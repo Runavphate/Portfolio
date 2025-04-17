@@ -2,19 +2,99 @@
 <html>
 <head>
     <title>Python Output on GitHub</title>
+    <link rel="stylesheet" href="https://pyscript.net/releases/pyscript-1.0.4.css"/>
+    <script defer src="https://pyscript.net/releases/pyscript-1.0.4.js"></script>
 </head>
 <body>
     <h1>Python Output</h1>
-    <div id="output"></div>
-    <script>
-        fetch('output.txt')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('output').innerText = data;
-            })
-            .catch(error => {
-                console.error('Error fetching the output:', error);
-            });
-    </script>
+    <py-script>
+import pygame
+import random
+
+# Initialize pygame
+pygame.init()
+
+# Screen dimensions
+WIDTH, HEIGHT = 800, 400
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("Dino Game")
+
+# Colors
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+GRAY = (200, 200, 200)
+
+# Dino and obstacle
+dino_size = 50
+dino_x, dino_y = 50, HEIGHT - dino_size - 50
+dino_velocity = 0
+jumping = False
+
+obstacle_width, obstacle_height = 40, 60
+obstacle_x, obstacle_y = WIDTH, HEIGHT - obstacle_height - 50
+
+# Clock and font
+clock = pygame.time.Clock()
+font = pygame.font.SysFont(None, 36)
+
+# Game variables
+score = 0
+speed = 5
+
+running = True
+while running:
+    screen.fill(WHITE)
+
+    # Draw ground
+    pygame.draw.line(screen, GRAY, (0, HEIGHT - 50), (WIDTH, HEIGHT - 50), 5)
+
+    # Draw dino
+    dino = pygame.Rect(dino_x, dino_y, dino_size, dino_size)
+    pygame.draw.rect(screen, BLACK, dino)
+
+    # Draw obstacle
+    obstacle = pygame.Rect(obstacle_x, obstacle_y, obstacle_width, obstacle_height)
+    pygame.draw.rect(screen, BLACK, obstacle)
+
+    # Update obstacle position
+    obstacle_x -= speed
+    if obstacle_x < 0:
+        obstacle_x = WIDTH
+        score += 1
+
+    # Dino jump physics
+    if jumping:
+        dino_velocity += 1
+        dino_y += dino_velocity
+        if dino_y >= HEIGHT - dino_size - 50:
+            dino_y = HEIGHT - dino_size - 50
+            jumping = False
+            dino_velocity = 0
+
+    # Check for collision
+    if dino.colliderect(obstacle):
+        running = False
+
+    # Display score
+    score_text = font.render(f"Score: {score}", True, BLACK)
+    screen.blit(score_text, (10, 10))
+
+    # Event handling
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_SPACE and not jumping:
+                jumping = True
+                dino_velocity = -15
+
+    pygame.display.flip()
+    clock.tick(30)
+
+pygame.quit()
+        from js import document
+        document.getElementById('my-paragraph').textContent="updated by Python"
+    </py-script>
+    
 </body>
 </html>
