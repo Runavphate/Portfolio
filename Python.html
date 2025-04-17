@@ -1,104 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
- 
-    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
- 
-    <title>PyScript Demo</title>
+    <title>Dino Game</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+            display: block;
+            margin: auto;
+        }
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+    </style>
 </head>
 <body>
+    <h1>Dino Game</h1>
+    <p>Press the space bar to make the Dino jump!</p>
     <py-script>
-import pygame
-import random
+        import js
+        from random import randint
 
-# Initialize Pygame
-pygame.init()
+        canvas = js.document.querySelector("canvas")
+        ctx = canvas.getContext("2d")
+        canvas.width = 800
+        canvas.height = 400
 
-# Screen dimensions
-WIDTH, HEIGHT = 800, 400
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Dino Game")
+        # Dino attributes
+        dino_width, dino_height = 40, 40
+        dino_x, dino_y = 50, canvas.height - dino_height - 50
+        dino_velocity = 0
+        gravity = 1
+        is_jumping = False
 
-# Colors
-WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
-RED = (255, 0, 0)
+        # Obstacle attributes
+        obstacle_width, obstacle_height = 20, 50
+        obstacle_x = canvas.width
+        obstacle_y = canvas.height - obstacle_height - 50
+        obstacle_speed = 5
 
-# Clock and font
-clock = pygame.time.Clock()
-font = pygame.font.Font(None, 36)
+        # Score
+        score = 0
 
-# Dino attributes
-dino_width, dino_height = 40, 40
-dino_x, dino_y = 50, HEIGHT - dino_height - 50
-dino_velocity = 0
-gravity = 1
-is_jumping = False
+        def draw_dino(x, y):
+            ctx.fillStyle = "black"
+            ctx.fillRect(x, y, dino_width, dino_height)
 
-# Obstacle attributes
-obstacle_width, obstacle_height = 20, 50
-obstacle_x = WIDTH
-obstacle_y = HEIGHT - obstacle_height - 50
-obstacle_speed = 5
+        def draw_obstacle(x, y):
+            ctx.fillStyle = "red"
+            ctx.fillRect(x, y, obstacle_width, obstacle_height)
 
-# Score
-score = 0
+        def display_score(score):
+            ctx.font = "20px Arial"
+            ctx.fillStyle = "black"
+            ctx.fillText(f"Score: {score}", 10, 30)
 
-def draw_dino(x, y):
-    pygame.draw.rect(screen, BLACK, (x, y, dino_width, dino_height))
+        def update():
+            global dino_y, dino_velocity, is_jumping, obstacle_x, score
 
-def draw_obstacle(x, y):
-    pygame.draw.rect(screen, RED, (x, y, obstacle_width, obstacle_height))
+            # Clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height)
 
-def display_score(score):
-    score_text = font.render(f"Score: {score}", True, BLACK)
-    screen.blit(score_text, (10, 10))
+            # Dino movement
+            if is_jumping:
+                dino_y += dino_velocity
+                dino_velocity += gravity
+                if dino_y >= canvas.height - dino_height - 50:
+                    dino_y = canvas.height - dino_height - 50
+                    is_jumping = False
 
-def main():
-    global dino_y, dino_velocity, is_jumping, obstacle_x, score
-    running = True
-    
-    while running:
-        screen.fill(WHITE)
-        
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                running = False
-            if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE and not is_jumping:
+            # Obstacle movement
+            obstacle_x -= obstacle_speed
+            if obstacle_x < 0:
+                obstacle_x = canvas.width
+                score += 1
+
+            # Collision detection
+            if (
+                dino_x < obstacle_x + obstacle_width
+                and dino_x + dino_width > obstacle_x
+                and dino_y < obstacle_y + obstacle_height
+            ):
+                js.alert(f"Game Over! Final Score: {score}")
+                js.location.reload()
+
+            # Draw elements
+            draw_dino(dino_x, dino_y)
+            draw_obstacle(obstacle_x, obstacle_y)
+            display_score(score)
+
+            # Request next frame
+            js.window.requestAnimationFrame(update)
+
+        # Space bar event listener
+        def on_keydown(event):
+            global is_jumping, dino_velocity
+            if event.keyCode == 32 and not is_jumping:  # Space bar
                 is_jumping = True
                 dino_velocity = -15
-        
-        # Dino movement
-        if is_jumping:
-            dino_y += dino_velocity
-            dino_velocity += gravity
-            if dino_y >= HEIGHT - dino_height - 50:
-                dino_y = HEIGHT - dino_height - 50
-                is_jumping = False
-        
-        # Obstacle movement
-        obstacle_x -= obstacle_speed
-        if obstacle_x < 0:
-            obstacle_x = WIDTH
-            score += 1
-        
-        # Collision detection
-        if dino_x < obstacle_x + obstacle_width and dino_x + dino_width > obstacle_x and dino_y < obstacle_y + obstacle_height:
-            running = False
-        
-        # Draw elements
-        draw_dino(dino_x, dino_y)
-        draw_obstacle(obstacle_x, obstacle_y)
-        display_score(score)
-        
-        pygame.display.flip()
-        clock.tick(30)
 
-    pygame.quit()
+        js.document.addEventListener("keydown", on_keydown)
 
-if __name__ == "__main__":
-    main()
-    </py-script>   
+        update()
+    </py-script>
+    <canvas></canvas>
 </body>
+</html>
