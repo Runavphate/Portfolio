@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Python Output on GitHub</title>
-    <link rel="stylesheet" href="https://pyscript.net/releases/pyscript-1.0.4.css"/>
-    <script defer src="https://pyscript.net/releases/pyscript-1.0.4.js"></script>
+    <meta charset="UTF-8">
+ 
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+ 
+    <title>PyScript Demo</title>
 </head>
 <body>
-    <h1>Python Output</h1>
+    <h1>Hello,
     <py-script>
 import pygame
 import random
@@ -92,9 +95,6 @@ while running:
     clock.tick(30)
 
 pygame.quit()
-        from js import document
-        document.getElementById('my-paragraph').textContent="updated by Python"
-    </py-script>
-    
+    </py-script>   
+    </h1>
 </body>
-</html>
