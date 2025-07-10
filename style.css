@@ -1,3 +1,4 @@
+
 html {
   scroll-behavior: smooth;
 }
@@ -217,7 +218,6 @@ html {
   }
   
   .name{
-    display:block;
     color: rgb(126, 126, 126)
   }
   }
@@ -328,7 +328,7 @@ html {
   
     ul {
       list-style-type: none;
-      margin-left: -95px;
+      margin-left: -90px;
       padding: 0;
       overflow: hidden;
       position: fixed;
