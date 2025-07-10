@@ -56,17 +56,22 @@ html {
       .skills,
       .projects {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: centre;
         flex-wrap: wrap;
+        gap: 20;
+        padding: 30px;
       }
   
       .skill {
+        flex: 1 1 300px;
+        max-width: 300px;
         background-color: #ffffff;
-        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-sizing: border-box;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         padding: 20px;
-        margin: 10px;
-        width: 200px;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: centre;
+        transition: transform 0.3s ease;
       }
   
       .skill:focus {
@@ -74,13 +79,39 @@ html {
       }
   
       .skill:hover {
-        box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-        transform: translateY(-2px);
+        transform: translateY(-5px);
       }
   
       .skill:active {
         box-shadow: #D6D6E7 0 3px 7px inset;
         transform: translateY(2px);
+      }
+
+      .skill h3 {
+        margin-top: 0;
+        color: #333333;
+      }
+
+      .skill p {
+        font-size: 14px;
+        color: #555555
+      }
+
+      .skill button {
+        display: block;
+        margin: 15px auto 0;
+        padding: 10px 20px;
+        background-color: #0078D7;
+        color: #ffffff;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.3s ease;
+      }
+
+      .skill button:hover {
+        background-color: #005ea6;
       }
   
       footer {
