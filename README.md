@@ -5,11 +5,11 @@ Welcome to my portfolio! This project showcases my learning journey through vari
 [Click here to view the site](https://runavphate.github.io/Portfolio/)
 
 📁 Projects Included
-- Calculator
 - Voting Form
 - HTML Forms
+- NFT Marketplace
 
-🛠️ Technologies Used
+🛠️ Languages Used
 - HTML
 - CSS
 - Javascript
